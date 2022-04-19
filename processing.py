@@ -8,8 +8,8 @@ from sklearn import preprocessing
 from scipy import stats
 
 # SMAP data 불러오기
-
-SMAP_path_dir = '/home/minseok/workspace/data_set/SMAP/'
+dataset_dir = "C:/Users/minseok/Desktop/project/data_set/"
+SMAP_path_dir = dataset_dir + "SMAP/"
 SMAP_label_dir = "anomaly point"
 SMAP_train_dir = "data2/train/"
 SMAP_test_dir = "data2/test/"
@@ -73,10 +73,10 @@ def MSL():
 
 #SWaT 데이터 불러오기
 def SWaT():
-    original = pd.read_csv("/home/minseok/workspace/data_set/SWaT/SWaT_Dataset_Normal_v0.csv", header=1)
+    original = pd.read_csv(dataset_dir + "SWaT/SWaT_Dataset_Normal_v0.csv", header=1)
     train_set = original.drop([' Timestamp', 'Normal/Attack'], axis=1)
     train_set = np.array(train_set)
-    test_original = pd.read_csv("/home/minseok/workspace/data_set/SWaT/SWaT_Dataset_Attack_v0.csv")
+    test_original = pd.read_csv(dataset_dir + "SWaT/SWaT_Dataset_Attack_v0.csv")
     test_set = test_original.drop([' Timestamp', 'Normal/Attack'], axis=1)
     label_set = test_original['Normal/Attack']
     label_list = list()
@@ -91,7 +91,7 @@ def SWaT():
 
 #Server machine data 불러오기
 def SMD():
-    path_dir = '/home/minseok/workspace/data_set/ServerMachineDataset'
+    path_dir = dataset_dir + 'ServerMachineDataset'
     index = 0
     for i in range(1,9):
         if index ==0:
