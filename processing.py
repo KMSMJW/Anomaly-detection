@@ -161,6 +161,7 @@ def kde_score(score_set, length):
     for c in score_set:
         critic_extend.extend(np.repeat(c,length).tolist())
     critic_extend = np.array(critic_extend).reshape((-1, length))
+    print(critic_extend.shape)
     critic_kde = list()
     num = length + score_set.shape[0] -1
     for i in range(num):
@@ -176,6 +177,7 @@ def kde_score(score_set, length):
                 critic_kde.append(np.median(discr_inter))
         else:
             critic_kde.append(np.median(np.array(critic_inter)))
+    print(np.array(critic_kde).shape)
     return np.array(critic_kde)
 
 def pred(reconstruct_set):
