@@ -163,7 +163,9 @@ class trainer:
         latent_set = np.array(latent_set)
         print("--------------- reconstructing  ----------------")
         if step_size == 1:
+            print("--------kde scoring---------")
             kde_score = pr.data_loader().kde_score(latent_set, self.seqs)
+            print("--------average predict----------")
             predict = pr.data_loader().pred(reconstruct_set)
             recon_error = (predict - test_original)**2
             error_score = np.mean(recon_error, axis=1)

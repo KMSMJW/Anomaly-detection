@@ -20,11 +20,11 @@ class Sampling(layers.Layer):
 class Encoder(layers.Layer):
     def __init__(self, in_channels, name="encoder", **kwargs):
         super(Encoder, self).__init__(name=name, **kwargs)
-        self.lstm1 = tf.keras.layers.LSTM(int(in_channels*2/3), return_sequences=True)
-        self.lstm2 = tf.keras.layers.LSTM(int(in_channels*2/3), return_sequences=True)
-        self.Dense = tf.keras.layers.TimeDistributed(tf.keras.layers.Dense(int(in_channels/3)))
-        self.dense_mean = tf.keras.layers.Dense(units=int(in_channels/5))
-        self.dense_log_var = tf.keras.layers.Dense(units=int(in_channels/5))
+        self.lstm1 = tf.keras.layers.LSTM(max(int(in_channels*2/3),1), return_sequences=True)
+        self.lstm2 = tf.keras.layers.LSTM(max(int(in_channels*2/3),1), return_sequences=True)
+        self.Dense = tf.keras.layers.TimeDistributed(tf.keras.layers.Dense(max(int(in_channels/3),1)))
+        self.dense_mean = tf.keras.layers.Dense(units=max(int(in_channels/5),1))
+        self.dense_log_var = tf.keras.layers.Dense(units=max(int(in_channels/5),1))
         self.sampling = Sampling()
 
     def call(self,inputs):
@@ -39,8 +39,8 @@ class Encoder(layers.Layer):
 class Decoder(layers.Layer):
     def __init__(self, in_channels, name="decoder", **kwargs):
         super(Decoder, self).__init__(name=name, **kwargs)
-        self.lstm1 = tf.keras.layers.LSTM(int(in_channels/3), return_sequences=True)
-        self.lstm2 = tf.keras.layers.LSTM(int(in_channels*2/3), return_sequences=True)
+        self.lstm1 = tf.keras.layers.LSTM(max(int(in_channels/3),1), return_sequences=True)
+        self.lstm2 = tf.keras.layers.LSTM(max(int(in_channels*2/3),1), return_sequences=True)
         self.lstm3 = tf.keras.layers.TimeDistributed(tf.keras.layers.Dense(in_channels))
 
     def call(self, inputs):

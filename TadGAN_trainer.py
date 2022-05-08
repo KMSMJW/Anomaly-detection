@@ -17,6 +17,16 @@ class TadGAN_trainer:
         self.critic_z_optimizer = tf.keras.optimizers.Adam(learning_rate)
 
     def init_trainset(self, train_set):
+        """
+        Decision model input size
+
+        Args:
+            train_set (ndarray):
+                train set
+        
+        Returns:
+
+        """
         self.train_set = train_set
         self.seqs = train_set.shape[1]
         self.channels = train_set.shape[2]
@@ -30,12 +40,26 @@ class TadGAN_trainer:
         self.generator_reshape_shape = (self.seqs//2, self.channels)
 
     def build_tadgan(self):
+        """
+        build TadGAN model
+        """
         self.encoder = util.build_encoder_layer(input_shape=self.encoder_input_shape, encoder_reshape_shape=self.encoder_reshape_shape)
         self.generator = util.build_generator_layer(input_shape=self.generator_input_shape, generator_reshape_shape=self.generator_reshape_shape)
         self.critic_x = util.build_critic_x_layer(input_shape=self.critic_x_input_shape)
         self.critic_z = util.build_critic_z_layer(input_shape=self.critic_z_input_shape)
 
     def train(self, epochs, batch_size, n_critics):
+        """
+        training model
+
+        Args:
+            epochs (int):
+                number of epoch
+            batch_size (int):
+                number of batch size
+            n_critics (int):
+                number of critics
+        """
 
         X_ = np.copy(self.train_set)
 
@@ -86,18 +110,43 @@ class TadGAN_trainer:
             print('Epoch: {}/{}, [Dx loss: {}] [Dz loss: {}] [E loss: {}] [G loss: {}]'.format(epoch, epochs, cx_loss, cz_loss, e_loss, g_loss))
 
     def save_model(self, name):
+        """
+        save model
+
+        Args:
+            name (str):
+                model name
+        """
         self.generator.save('./model_parameter/' + name + '/generator')
         self.encoder.save('./model_parameter/' + name + '/encoder')
         self.critic_x.save('./model_parameter/' + name + '/critic_x')
         self.critic_z.save('./model_parameter/' + name + '/critic_z')
 
     def load_model(self, name):
+        """
+        load model
+
+        Args:
+            name (str):
+                model name
+        """
         self.generator = tf.keras.models.load_model('./model_parameter/' + name + '/generator')
         self.encoder = tf.keras.models.load_model('./model_parameter/' + name + '/encoder')
         self.critic_x = tf.keras.models.load_model('./model_parameter/' + name + '/critic_x')
         self.critic_z = tf.keras.models.load_model('./model_parameter/' + name + '/critic_z')
 
     def predict(self, data):
+        """
+        prediction
+
+        Args:
+            data (ndarray):
+                input data
+
+        Returns:
+            ndarray:
+                predict data
+        """
         if len(data.shape) == 3:
             predict = self.generator(self.encoder(data))
         else:
@@ -106,6 +155,21 @@ class TadGAN_trainer:
         return predict
 
     def ROC_score(self, test_set, test_original, label_set, step_size, name):
+        """
+        get ROC score and save figure
+
+        Args:
+            test_set (ndarray):
+                test set with smoothing window applied
+            test_original (ndarray):
+                test_set without smoothing window applied
+            label_set (ndarray, 0 or 1):
+                label set
+            step_size (int):
+                step size for smoothing window
+            name (str):
+                figure save name
+        """
         num = test_set.shape[0]//100
         reconstruct_set = list()
         critic_set = list()

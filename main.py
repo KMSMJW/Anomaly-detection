@@ -14,7 +14,7 @@ trainer = trainer.trainer()
 
 trainer.init_trainset(train_set_overlap)
 
-trainer.build_lstm_vae()
+trainer.build_ae()
 
 trainer.train(1,512)
 

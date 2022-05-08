@@ -258,7 +258,7 @@ class data_loader:
         critic_extend = np.array(critic_extend).reshape((-1, length))
         critic_kde = list()
         num = length + (score_set.shape[0] -1)
-        for i in range(num):
+        for i in tqdm(range(num)):
             critic_inter = list()
             for j in range(max(0,i-num+length), min(i+1, length)):
                 critic_inter.append(critic_extend[i-j,j])
@@ -288,7 +288,7 @@ class data_loader:
         length = reconstruct_set.shape[1]
         num = reconstruct_set.shape[1] + (reconstruct_set.shape[0] - 1)
         prediction = list()
-        for i in range(num):
+        for i in tqdm(range(num)):
             inter = list()
             for j in range(max(0,i-num+length), min(i+1, length)):
                 inter.append(reconstruct_set[i-j,j])

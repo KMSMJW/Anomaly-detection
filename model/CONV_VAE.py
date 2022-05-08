@@ -17,11 +17,11 @@ class Sampling(tf.keras.layers.Layer):
 class Encoder(tf.keras.layers.Layer):
     def __init__(self, channel, name="encoder", **kwargs):
         super(Encoder, self).__init__(name=name, **kwargs)
-        self.conv0 = tf.keras.layers.Conv1D(filters=channel*2//3, kernel_size=2, padding='valid', strides=2, activation='relu')
-        self.conv1 = tf.keras.layers.Conv1D(filters=channel//3, kernel_size=2, padding='valid', strides=2, activation='relu')
+        self.conv0 = tf.keras.layers.Conv1D(filters=max(channel*2//3, 1), kernel_size=2, padding='valid', strides=2, activation='relu')
+        self.conv1 = tf.keras.layers.Conv1D(filters=max(channel//3, 1), kernel_size=2, padding='valid', strides=2, activation='relu')
         self.flat = tf.keras.layers.Flatten()
-        self.dense_mean = tf.keras.layers.Dense(units=channel//5)
-        self.dense_log_var = tf.keras.layers.Dense(units=channel//5)
+        self.dense_mean = tf.keras.layers.Dense(units=max(channel//5,1))
+        self.dense_log_var = tf.keras.layers.Dense(units=max(channel//5,1))
         self.sampling = Sampling()
 
     def call(self,inputs):
@@ -36,9 +36,9 @@ class Encoder(tf.keras.layers.Layer):
 class Decoder(tf.keras.layers.Layer):
     def __init__(self, seqs, channel, name="decoder", **kwargs):
         super(Decoder, self).__init__(name=name, **kwargs)
-        self.dense = tf.keras.layers.Dense(units=(seqs//4)*(channel//3), activation='relu')
-        self.reshape = tf.keras.layers.Reshape(target_shape=(seqs//4,channel//3))
-        self.conv1 = tf.keras.layers.Conv1DTranspose(filters=channel*2//3, kernel_size=2, padding='valid', strides=2, activation='relu')
+        self.dense = tf.keras.layers.Dense(units=max((seqs//4),1)*max((channel//3),1), activation='relu')
+        self.reshape = tf.keras.layers.Reshape(target_shape=(max(seqs//4,1),max(channel//3,1)))
+        self.conv1 = tf.keras.layers.Conv1DTranspose(filters=max(channel*2//3,1), kernel_size=2, padding='valid', strides=2, activation='relu')
         self.conv2 = tf.keras.layers.Conv1DTranspose(filters=channel, kernel_size=2, padding='valid', strides=2, activation='relu')
 
     def call(self, inputs):
@@ -58,6 +58,6 @@ class VariationalAutoEncoder(tf.keras.Model):
         z_mean, z_log_var, z = self.encoder(inputs)
         reconstructed = self.decoder(z)
         # kl_loss = -0.0005*tf.reduce_mean(z_log_var - tf.square(z_mean) - tf.exp(z_log_var) + 1)
-        kl_loss = -0.0005*tf.reduce_mean(tf.reduce_mean(z_log_var - tf.square(z_mean) - tf.exp(z_log_var) + 1, axis=-1),axis=-1)
+        kl_loss = -0.0005*(tf.reduce_mean(z_log_var - tf.square(z_mean) - tf.exp(z_log_var) + 1, axis=-1))
         self.add_loss(kl_loss)
         return reconstructed
