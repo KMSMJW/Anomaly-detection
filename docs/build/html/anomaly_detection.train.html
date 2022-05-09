@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>anomaly_detection.train package &mdash; anomaly detection 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="anomaly_detection.train.model package" href="anomaly_detection.train.model.html" />
+    <link rel="prev" title="anomaly_detection package" href="anomaly_detection.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> anomaly detection
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">anomaly_detection</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="anomaly_detection.html">anomaly_detection package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="anomaly_detection.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">anomaly_detection.train package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="anomaly_detection.html#module-anomaly_detection">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">anomaly detection</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">anomaly_detection</a> &raquo;</li>
+        
+          <li><a href="anomaly_detection.html">anomaly_detection package</a> &raquo;</li>
+        
+      <li>anomaly_detection.train package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/anomaly_detection.train.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="anomaly-detection-train-package">
+<h1>anomaly_detection.train package<a class="headerlink" href="#anomaly-detection-train-package" title="Permalink to this headline">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="anomaly_detection.train.model.html">anomaly_detection.train.model package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_detection.train.model.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_detection.train.model.html#module-anomaly_detection.train.model.AE">anomaly_detection.train.model.AE module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_detection.train.model.html#module-anomaly_detection.train.model.CONV_VAE">anomaly_detection.train.model.CONV_VAE module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_detection.train.model.html#module-anomaly_detection.train.model.LSTM">anomaly_detection.train.model.LSTM module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_detection.train.model.html#module-anomaly_detection.train.model.LSTM_VAE">anomaly_detection.train.model.LSTM_VAE module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_detection.train.model.html#module-anomaly_detection.train.model">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-anomaly_detection.train.TadGAN_main">
+<span id="anomaly-detection-train-tadgan-main-module"></span><h2>anomaly_detection.train.TadGAN_main module<a class="headerlink" href="#module-anomaly_detection.train.TadGAN_main" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-anomaly_detection.train.TadGAN_trainer">
+<span id="anomaly-detection-train-tadgan-trainer-module"></span><h2>anomaly_detection.train.TadGAN_trainer module<a class="headerlink" href="#module-anomaly_detection.train.TadGAN_trainer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_trainer.TadGAN_trainer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.TadGAN_trainer.</span></span><span class="sig-name descname"><span class="pre">TadGAN_trainer</span></span><a class="headerlink" href="#anomaly_detection.train.TadGAN_trainer.TadGAN_trainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.ROC_score">
+<span class="sig-name descname"><span class="pre">ROC_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_original</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.ROC_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>get ROC score and save figure</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>test_set (ndarray):</dt><dd><p>test set with smoothing window applied</p>
+</dd>
+<dt>test_original (ndarray):</dt><dd><p>test_set without smoothing window applied</p>
+</dd>
+<dt>label_set (ndarray, 0 or 1):</dt><dd><p>label set</p>
+</dd>
+<dt>step_size (int):</dt><dd><p>step size for smoothing window</p>
+</dd>
+<dt>name (str):</dt><dd><p>figure save name</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.build_tadgan">
+<span class="sig-name descname"><span class="pre">build_tadgan</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.build_tadgan" title="Permalink to this definition">¶</a></dt>
+<dd><p>build TadGAN model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.init_trainset">
+<span class="sig-name descname"><span class="pre">init_trainset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.init_trainset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decision model input size</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>train_set (ndarray):</dt><dd><p>train set</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.load_model">
+<span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.load_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>load model</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>name (str):</dt><dd><p>model name</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>prediction</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>data (ndarray):</dt><dd><p>input data</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>ndarray:</dt><dd><p>predict data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.save_model">
+<span class="sig-name descname"><span class="pre">save_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.save_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>save model</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>name (str):</dt><dd><p>model name</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_critics</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_trainer.TadGAN_trainer.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>training model</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>epochs (int):</dt><dd><p>number of epoch</p>
+</dd>
+<dt>batch_size (int):</dt><dd><p>number of batch size</p>
+</dd>
+<dt>n_critics (int):</dt><dd><p>number of critics</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-anomaly_detection.train.TadGAN_util">
+<span id="anomaly-detection-train-tadgan-util-module"></span><h2>anomaly_detection.train.TadGAN_util module<a class="headerlink" href="#module-anomaly_detection.train.TadGAN_util" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_util.RandomWeightedAverage">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.TadGAN_util.</span></span><span class="sig-name descname"><span class="pre">RandomWeightedAverage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_util.RandomWeightedAverage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">keras.engine.base_layer.Layer</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_util.build_critic_x_layer">
+<span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.TadGAN_util.</span></span><span class="sig-name descname"><span class="pre">build_critic_x_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_util.build_critic_x_layer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_util.build_critic_z_layer">
+<span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.TadGAN_util.</span></span><span class="sig-name descname"><span class="pre">build_critic_z_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_util.build_critic_z_layer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_util.build_encoder_layer">
+<span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.TadGAN_util.</span></span><span class="sig-name descname"><span class="pre">build_encoder_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_reshape_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_util.build_encoder_layer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_util.build_generator_layer">
+<span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.TadGAN_util.</span></span><span class="sig-name descname"><span class="pre">build_generator_layer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator_reshape_shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_util.build_generator_layer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_util.critic_x_train_on_batch">
+<span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.TadGAN_util.</span></span><span class="sig-name descname"><span class="pre">critic_x_train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critic_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critic_x_optimizer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_util.critic_x_train_on_batch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_util.critic_z_train_on_batch">
+<span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.TadGAN_util.</span></span><span class="sig-name descname"><span class="pre">critic_z_train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critic_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critic_z_optimizer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_util.critic_z_train_on_batch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_util.enc_gen_train_on_batch">
+<span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.TadGAN_util.</span></span><span class="sig-name descname"><span class="pre">enc_gen_train_on_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critic_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critic_z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoder_optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator_optimizer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_util.enc_gen_train_on_batch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anomaly_detection.train.TadGAN_util.wasserstein_loss">
+<span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.TadGAN_util.</span></span><span class="sig-name descname"><span class="pre">wasserstein_loss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.TadGAN_util.wasserstein_loss" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-anomaly_detection.train.main">
+<span id="anomaly-detection-train-main-module"></span><h2>anomaly_detection.train.main module<a class="headerlink" href="#module-anomaly_detection.train.main" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-anomaly_detection.train.processing">
+<span id="anomaly-detection-train-processing-module"></span><h2>anomaly_detection.train.processing module<a class="headerlink" href="#module-anomaly_detection.train.processing" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="anomaly_detection.train.processing.data_loader">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.processing.</span></span><span class="sig-name descname"><span class="pre">data_loader</span></span><a class="headerlink" href="#anomaly_detection.train.processing.data_loader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>load data &amp; processing data</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.processing.data_loader.MSL">
+<span class="sig-name descname"><span class="pre">MSL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.processing.data_loader.MSL" title="Permalink to this definition">¶</a></dt>
+<dd><p>load MSL dataset</p>
+<p>Args:</p>
+<dl class="simple">
+<dt>Return:</dt><dd><p>train_dataset(np.array), test_dataset(np.array), label_dataset(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.processing.data_loader.SMAP">
+<span class="sig-name descname"><span class="pre">SMAP</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.processing.data_loader.SMAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>load SMAP dataset</p>
+<p>Args:</p>
+<dl class="simple">
+<dt>Return:</dt><dd><p>train_dataset(np.array), test_dataset(np.array), label_dataset(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.processing.data_loader.SMD">
+<span class="sig-name descname"><span class="pre">SMD</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.processing.data_loader.SMD" title="Permalink to this definition">¶</a></dt>
+<dd><p>load SMD dataset</p>
+<p>Args:</p>
+<dl class="simple">
+<dt>Return:</dt><dd><p>train_dataset(np.array), test_dataset(np.array), label_dataset(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.processing.data_loader.SWaT">
+<span class="sig-name descname"><span class="pre">SWaT</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.processing.data_loader.SWaT" title="Permalink to this definition">¶</a></dt>
+<dd><p>load SWaT dataset</p>
+<p>Args:</p>
+<dl class="simple">
+<dt>Return:</dt><dd><p>train_dataset(np.array), test_dataset(np.array), label_dataset(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.processing.data_loader.kde_score">
+<span class="sig-name descname"><span class="pre">kde_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">score_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.processing.data_loader.kde_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute anomaly score</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>score_set (ndarray):</dt><dd><p>critic score set</p>
+</dd>
+<dt>length (int):</dt><dd><p>Size of window</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>ndarray:</dt><dd><p>Array of anomaly scores</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.processing.data_loader.label_window">
+<span class="sig-name descname"><span class="pre">label_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.processing.data_loader.label_window" title="Permalink to this definition">¶</a></dt>
+<dd><p>smoothing window processing for label set(non overlap)</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>data (ndarray):</dt><dd><p>label dataset</p>
+</dd>
+<dt>length (ndarray):</dt><dd><p>Size of window</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>ndarray:</dt><dd><p>Array of processing dataset</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.processing.data_loader.min_max">
+<span class="sig-name descname"><span class="pre">min_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.processing.data_loader.min_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Min-max processing</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>train (ndarray):</dt><dd><p>train dataset</p>
+</dd>
+<dt>test (ndarray):</dt><dd><p>test dataset</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>train_set (ndarray):</dt><dd><p>train set after min-max processing</p>
+</dd>
+<dt>test_set (ndarray):</dt><dd><p>test set after min-max processing</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.processing.data_loader.pred">
+<span class="sig-name descname"><span class="pre">pred</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reconstruct_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.processing.data_loader.pred" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute predicted value</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>reconstruc_set (ndarray):</dt><dd><p>Predicted values. Each timestamp has multiple predictions.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>ndarray:</dt><dd><p>Array of predictd value</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.processing.data_loader.window_overlap">
+<span class="sig-name descname"><span class="pre">window_overlap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.processing.data_loader.window_overlap" title="Permalink to this definition">¶</a></dt>
+<dd><p>smoothing window processing</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>input_data (ndarray):</dt><dd><p>input data</p>
+</dd>
+<dt>length (int):</dt><dd><p>Size of window</p>
+</dd>
+<dt>step_size (int):</dt><dd><p>step size for smoothing window. if step size = 0 -&gt; non overlap</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>ndarray:</dt><dd><p>Array of processing dataset</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-anomaly_detection.train.utils">
+<span id="anomaly-detection-train-utils-module"></span><h2>anomaly_detection.train.utils module<a class="headerlink" href="#module-anomaly_detection.train.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="anomaly_detection.train.utils.trainer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">anomaly_detection.train.utils.</span></span><span class="sig-name descname"><span class="pre">trainer</span></span><a class="headerlink" href="#anomaly_detection.train.utils.trainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.utils.trainer.ROC_score">
+<span class="sig-name descname"><span class="pre">ROC_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_original</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.utils.trainer.ROC_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>get ROC score and save figure</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>test_set (ndarray):</dt><dd><p>test set with smoothing window applied</p>
+</dd>
+<dt>test_original (ndarray):</dt><dd><p>test set without smoothing window applied</p>
+</dd>
+<dt>label_set (ndarray, 0 or 1):</dt><dd><p>label set</p>
+</dd>
+<dt>step_size (int):</dt><dd><p>step size for smoothing window</p>
+</dd>
+<dt>name (str):</dt><dd><p>figure save name</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.utils.trainer.build_ae">
+<span class="sig-name descname"><span class="pre">build_ae</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.utils.trainer.build_ae" title="Permalink to this definition">¶</a></dt>
+<dd><p>build autoencoder model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.utils.trainer.build_conv_vae">
+<span class="sig-name descname"><span class="pre">build_conv_vae</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.utils.trainer.build_conv_vae" title="Permalink to this definition">¶</a></dt>
+<dd><p>build convolutional variational autoencoder model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.utils.trainer.build_lstm">
+<span class="sig-name descname"><span class="pre">build_lstm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.utils.trainer.build_lstm" title="Permalink to this definition">¶</a></dt>
+<dd><p>build lstm model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.utils.trainer.build_lstm_vae">
+<span class="sig-name descname"><span class="pre">build_lstm_vae</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.utils.trainer.build_lstm_vae" title="Permalink to this definition">¶</a></dt>
+<dd><p>build lstm variational autoencoder model</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.utils.trainer.init_trainset">
+<span class="sig-name descname"><span class="pre">init_trainset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_set</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.utils.trainer.init_trainset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decision model input size</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>train_set (ndarray):</dt><dd><p>train set</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.utils.trainer.load_model">
+<span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.utils.trainer.load_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>load model</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>name (str):</dt><dd><p>model name</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.utils.trainer.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.utils.trainer.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>prediction</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>data (ndarray):</dt><dd><p>input data</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>ndarray:</dt><dd><p>predict data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.utils.trainer.save_model">
+<span class="sig-name descname"><span class="pre">save_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.utils.trainer.save_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>save model</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>name (str):</dt><dd><p>model name</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="anomaly_detection.train.utils.trainer.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#anomaly_detection.train.utils.trainer.train" title="Permalink to this definition">¶</a></dt>
+<dd><p>training model</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>epochs (int):</dt><dd><p>number of epoch</p>
+</dd>
+<dt>batch_size (int):</dt><dd><p>number of batch size</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-anomaly_detection.train">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-anomaly_detection.train" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="anomaly_detection.train.model.html" class="btn btn-neutral float-right" title="anomaly_detection.train.model package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="anomaly_detection.html" class="btn btn-neutral float-left" title="anomaly_detection package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, asi
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
