@@ -1,21 +1,24 @@
-# from . import TadGAN_trainer
-# from . import processing as pr
+from . import TadGAN_trainer
+from . import processing as pr
 
-# dataloader = pr.data_loader()
 
-# train_set, test_set, label_set = dataloader.MSL()
+if __name__ == "__main__":
+    
+    dataloader = pr.data_loader()
 
-# train_set, test_set = dataloader.min_max(train_set, test_set)
+    train_set, test_set, label_set = dataloader.MSL()
 
-# train_set_overlap = dataloader.window_overlap(train_set,100,1)
-# test_set_overlap = dataloader.window_overlap(test_set,100,1)
+    train_set, test_set = dataloader.min_max(train_set, test_set)
 
-# trainer = TadGAN_trainer.TadGAN_trainer()
+    train_set_overlap = dataloader.window_overlap(train_set,100,1)
+    test_set_overlap = dataloader.window_overlap(test_set,100,1)
 
-# trainer.init_trainset(train_set_overlap)
+    trainer = TadGAN_trainer.TadGAN_trainer()
 
-# trainer.build_tadgan()
+    trainer.init_trainset(train_set_overlap)
 
-# trainer.train(1,128,5)
+    trainer.build_tadgan()
 
-# trainer.ROC_score(test_set_overlap,test_set,label_set,1,name='test')
+    trainer.train(1,128,5)
+
+    trainer.ROC_score(test_set_overlap,test_set,label_set,1,name='test')
