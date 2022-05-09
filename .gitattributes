@@ -1,3 +1,4 @@
 data_set/SWaT/*.xlsx filter=lfs diff=lfs merge=lfs -text
 data_set/SWaT/*.csv filter=lfs diff=lfs merge=lfs -text
 data_set/SWaT/* filter=lfs diff=lfs merge=lfs -text
+anomaly_detection/train/data_set/SWaT/* filter=lfs diff=lfs merge=lfs -text
