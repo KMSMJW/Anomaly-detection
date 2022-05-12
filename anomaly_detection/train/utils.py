@@ -1,12 +1,13 @@
-from . model import AE, CONV_VAE, LSTM, LSTM_VAE
+from model import AE, CONV_VAE, LSTM, LSTM_VAE
 from tqdm.autonotebook import tqdm
 import tensorflow as tf
 import numpy as np
 from IPython import display
-from . import processing as pr
+import processing as pr
 from sklearn import metrics
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve
+import os
 
 class trainer:
     def __init__(self):
@@ -152,12 +153,18 @@ class trainer:
             input = test_set[i*100:(i+1)*100]
             recon = self.model(input)
             reconstruct_set.extend(recon)
-            latent_score = self.model.losses[0]
+            if len(self.model.losses) == 0:
+                latent_score = self.model.losses
+            else:
+                latent_score = self.model.losses[0]
             latent_set.extend(latent_score)
         input = test_set[num*100:]
         recon = self.model(input)
         reconstruct_set.extend(recon)
-        latent_score = self.model.losses[0]
+        if len(self.model.losses) == 0:
+                latent_score = self.model.losses
+        else:
+            latent_score = self.model.losses[0]
         latent_set.extend(latent_score)
         reconstruct_set = np.array(reconstruct_set)
         latent_set = np.array(latent_set)
@@ -191,5 +198,5 @@ class trainer:
         plt.plot([0,1],[0,1],'r--')
 
         plt.legend(loc='lower right')
-        plt.savefig('./graph/' + name + '.png', dpi=300)
-        plt.show()
+        plt.savefig(os.path.dirname(os.path.abspath(__file__)) + '/graph/' + name + '.png', dpi=300)
+        # plt.show()

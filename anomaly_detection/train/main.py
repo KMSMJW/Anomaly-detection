@@ -1,5 +1,5 @@
-from . import utils
-from . import processing as pr
+import utils
+import processing as pr
 
 if __name__ == "__main__":
 
